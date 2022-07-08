@@ -86,3 +86,12 @@ Bonus section
 #   print(boolean)
 # fruit.append('raspberry')
 # fruit.pop(1)
+
+Goldberg = {
+    '1': 'Abe',
+    '2': 'Harry',
+    '3': 'Jack',
+    '4': 'Saul'
+    }
+
+print(f"The Goldberg Boy's names are", Goldberg)
