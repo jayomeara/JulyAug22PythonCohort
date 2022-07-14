@@ -41,13 +41,11 @@ class Player:
         self.position = "position"
         self.team = "team"
     @classmethod
-    def add_players(cls, list):
+    def get_team(cls,list):
         player_objects = []
         for dict in list:
-            player_objects.append(cls(list))
-        print(player_objects)
+            player_objects.append(cls(dict))
         return player_objects
-
 
 
 
@@ -60,3 +58,5 @@ player1 = players[5]
 
 print(kevin)
 print(joel)
+add_players(Player, players)
+print([player_objects])
