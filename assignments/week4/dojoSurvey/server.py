@@ -1,4 +1,5 @@
-from flask import Flask, render_template, session, redirect
+from flask import Flask, render_template, session, redirect, request
+# I forgot to import request, which was tripping me up.
 
 app = Flask(__name__)
 
@@ -8,7 +9,7 @@ app.secret_key="i dont understand what this does"
 def dojo():
     return render_template("index.html")
 
-@app.route('/process',methods=['POST'])
+@app.route('/process', methods=['POST'])
 def process():
     session['name'] = request.form['name']
     session['location'] = request.form['location']
