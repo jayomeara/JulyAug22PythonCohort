@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Dojo Survey</title>
+  </head>
+  <body>
+    <div class="container-fluid"><h3>Your gold:</h3>{{ session['gold'] }}</div>
+    <div class="container-fluid">
+        <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="farm"/>
+            <input type="submit" value="Find Gold!"/>
+          </form>
+          <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="cave"/>
+            <input type="submit" value="Find Gold!"/>
+          </form>
+          <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="house"/>
+            <input type="submit" value="Find Gold!"/>
+          </form>
+          <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="casino"/>
+            <input type="submit" value="Find Gold!"/>
+          </form>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">A Basic Panel</div>
+            <h1 class="card-title">Survey Results</h1>
+            <p class="card-text">Name: {{session['name']}}</p>
+            <p class="card-text">Dojo Location: {{session['location']}}</p>
+            <p class="card-text">Favorite Language: {{session['language']}}</p>
+            <p class="card-text">Comments: {{session['comments']}}</p>
+        </div>
+  </body>
+</html>
