@@ -1,7 +1,4 @@
-from flask import Flask, render_template, request, redirect
-from friend import Friend
-
-app = Flask(__name__)
+from flask_app.controllers import friends
 
 @app.route('/')
 def index():
