@@ -10,3 +10,8 @@ def ninjas():
 def create_ninja():
     ninja.Ninja.save(request.form)
     return redirect('/')
+
+# @app.route('/edit/ninja',methods=['POST'])
+# def edit_ninja():
+#     ninja.Ninja.save(request.form)
+#     return redirect('/')
