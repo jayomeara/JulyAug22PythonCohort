@@ -31,7 +31,7 @@ def register():
         else:
             session['user_id'] = id
             flash("You logged in")
-            return redirect('/dashboard/')
+            return redirect('/recipes/')
 
 @app.route('/login/', methods=['post'])
 def login():
@@ -48,9 +48,9 @@ def login():
     else:
         session['user_id'] = user.id
         flash("Welcome back!")
-        return redirect('/dashboard/')
+        return redirect('/recipes/')
 
-@app.route('/dashboard/')
+@app.route('/recipes/')
 def dashboard():
     if 'user_id' not in session:
         return redirect('/')
@@ -60,7 +60,7 @@ def dashboard():
         }
         theUser = User.getOne(data)
         theUsers = User.getAll()
-        return render_template('dashboard.html', users=theUsers, user=theUser)
+        return render_template('recipes.html', users=theUsers, user=theUser)
 
 @app.route('/createUser/', methods=['post'])
 def createUser():
@@ -70,10 +70,10 @@ def createUser():
         'email': request.form['email']
     }
     User.save(data)
-    return redirect('/dashboard/')
+    return redirect('/recipes/')
 
 @app.route('/logout/')
 def logout():
     session.clear()
-    flash("See Ya!")
+    flash("Later Skater")
     return redirect('/')

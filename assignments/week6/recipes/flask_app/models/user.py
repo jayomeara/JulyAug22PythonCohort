@@ -63,13 +63,13 @@ class User:
         results = connectToMySQL(User.db).query_db(query, user)
         if len(results) >= 1:
             isValid = False
-            flash("Email is already in use")
+            flash("Email is already in use in our database")
         if len(user['firstName']) < 2:
             isValid = False
-            flash("Please use least least 2 characters for the first name")
+            flash("Please use least least 2 characters for the first Name")
         if len(user['lastName']) < 2:
             isValid = False
-            flash("Please use least least 2 characters for the last name")
+            flash("Please use least least 2 characters for the last Name")
         if len(user['password']) < 6:
             isValid = False
             flash("Please use least least 6 characters for the password")
