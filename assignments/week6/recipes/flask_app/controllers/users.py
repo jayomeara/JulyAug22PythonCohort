@@ -10,12 +10,12 @@ def index():
     if 'user_id' not in session:
         return render_template('index.html')
     else:
-        return redirect('/dashboard')
+        return redirect('/recipes')
 
 @app.route('/register/', methods=['post'])
 def register():
     isValid = User.validate(request.form)
-    if not isValid: # if isValid is False the redirect back to '/' with flash message
+    if not isValid:
         return redirect('/')
     else:
         newUser = {

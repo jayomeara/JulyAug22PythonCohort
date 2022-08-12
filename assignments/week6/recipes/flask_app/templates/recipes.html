@@ -39,15 +39,11 @@
                         <th scope="col">Posted By</th>
                         <th scope="col">Actions</th>
                     </tr>
-                    {% for u in users %}
+                    {% for r in recipes %}
                         <tr>
-                            <td>{{u.firstName}}</td>
-                            <td>{{u.lastName}}</td>
-                            {% if u.id == user.id %}
-                                <td>Logged In</td>
-                            {% else %}
-                                <td>Not Logged In</td>
-                            {% endif %}
+                            <td>{{r.name}}</td>
+                            <td>{{r.under30}}</td>
+                            <td>{{r.userID}}</td>
                             <td><a href="/">View</a> | <a href="/">Edit</a> | <a href="/">Delete</a></td>
                         </tr>
                     {% endfor %}
