@@ -3,8 +3,9 @@ from flask import flash
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
+db = 'recipes'
+
 class User:
-    db = 'user'
     def __init__(self, data):
         self.id = data['id']
         self.firstName = data['firstName']
@@ -18,29 +19,40 @@ class User:
         return f'{self.firstName} {self.lastName}'
 
     @classmethod
-    def getAll(cls):
-        query = 'SELECT * FROM user;'
-        results = connectToMySQL(cls.db).query_db(query)
+    def get_all(cls):
+        query = "SELECT * from users;"
+        user_data = connectToMySQL(DB).query_db(query)
+
         users = []
-        for row in results:
-            users.append(cls(row))
+        for user in user_data:
+            users.append(cls(user))
+
         return users
 
     @classmethod
-    def getOne(cls, data):
-        query = 'SELECT * FROM user WHERE id = %(id)s;'
-        results = connectToMySQL(cls.db).query_db(query, data)
-        if len(results) < 1:
+    def get_by_id(cls, user_id):
+
+        data = {"id": user_id}
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        result = connectToMySQL(DB).query_db(query,data)
+        
+        # Didn't find a matching user
+        if len(result) < 1:
             return False
-        return cls(results[0])
+        return cls(result[0])
 
     @classmethod
-    def getEmail(cls, data):
-        query = "SELECT * FROM user WHERE email = %(email)s;"
-        results = connectToMySQL(cls.db).query_db(query, data)
-        if len(results) < 1:
+    def get_by_email(cls,email):
+
+        data = {
+            "email": email
+        }
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        result = connectToMySQL(DB).query_db(query,data)
+        # Didn't find a matching user
+        if len(result) < 1:
             return False
-        return cls(results[0])
+        return cls(result[0])
 
     @classmethod
     def save(cls, data):
