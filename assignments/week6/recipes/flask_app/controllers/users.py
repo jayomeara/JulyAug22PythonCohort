@@ -50,27 +50,15 @@ def login():
         flash("Welcome back!")
         return redirect('/recipes/')
 
-@app.route('/recipes/')
-def dashboard():
-    if 'user_id' not in session:
-        return redirect('/')
-    else:
-        data = {
-            'id': session['user_id']
-        }
-        theUser = User.getOne(data)
-        theUsers = User.getAll()
-        return render_template('recipes.html', users=theUsers, user=theUser)
-
-@app.route('/createUser/', methods=['post'])
-def createUser():
-    data = {
-        'firstName': request.form['firstName'],
-        'lastName': request.form['lastName'],
-        'email': request.form['email']
-    }
-    User.save(data)
-    return redirect('/recipes/')
+# @app.route('/createUser/', methods=['post'])
+# def createUser():
+#     data = {
+#         'firstName': request.form['firstName'],
+#         'lastName': request.form['lastName'],
+#         'email': request.form['email']
+#     }
+#     User.save(data)
+#     return redirect('/recipes/')
 
 @app.route('/logout/')
 def logout():
