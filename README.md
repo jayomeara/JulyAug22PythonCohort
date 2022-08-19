@@ -33,8 +33,7 @@
 - [Bonus Session - Full Flask w/o Validations - Bucket List](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week5/bonusSession)
 
 ## Week 6 - Login Registration/Validations, Full Flask App w/Many to Many, MadLip App, & Belt Demo
-- [Session 1 - Office Hour - CommentNotes App w/o Validations](https://github.com/Python-)
-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week6/session1/officeHour)
+- [Session 1 - Office Hour - CommentNotes App w/o Validations](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week6/session1/officeHour)
 - [Session 1 - Lecture - CommentNotes App w/Validations](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week6/session1/lecture)
 - [Session 2 - Full Stack App](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week6/session2)
 - [Full Stack App w/Many to Many](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week6/fullStackCompleted)
@@ -43,8 +42,9 @@ InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week6/session1/office
 
 ## Week 7
 - [Session 1 - Bonus Code Hour](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week7/session1/cookieOrderValidations)
-- [Session 1 - Office Hour] (https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week7/session1/officeHour)
+- [Session 1 - Office Hour](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week7/session1/officeHour)
 - [Session 1 - Lecture](https://github.com/Python-InstructorMelissa/JulyAug22PythonCohort/tree/main/lectures/week7/session1/lecture)
 
 ## Week 8
 -
+Just adding text
