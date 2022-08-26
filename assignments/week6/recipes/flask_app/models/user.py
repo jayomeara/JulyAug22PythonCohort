@@ -31,25 +31,18 @@ class User:
 
     @classmethod
     def get_by_id(cls, user_id):
-
         data = {"id": user_id}
         query = "SELECT * FROM users WHERE id = %(id)s;"
         result = connectToMySQL(DB).query_db(query,data)
-        
-        # Didn't find a matching user
         if len(result) < 1:
             return False
         return cls(result[0])
 
     @classmethod
-    def get_by_email(cls,email):
-
-        data = {
-            "email": email
-        }
+    def get_by_email(cls, email):
+        data = {"email": email}
         query = "SELECT * FROM users WHERE email = %(email)s;"
         result = connectToMySQL(DB).query_db(query,data)
-        # Didn't find a matching user
         if len(result) < 1:
             return False
         return cls(result[0])
